@@ -23,6 +23,49 @@ body{
     font-family: 'DMSans';
 }
 
-.grids {
+img{
+    width: 50%;
+    height: auto;
+}
+
+.container {
+    width: 100%;
     display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(2,1fr);    
+    gap: 25px 25px;
+    grid-template-areas:"box-1 box-3 box-3 box-7"
+                        "box-1 box-4 box-5 box-7"
+                        "box-2 box-6 box-8 box-8"
+                        ;
+}
+
+.grids{
+    position: relative;
+    border-radius: 20px;
+    gap:20px;
+}
+
+/* card colors */
+#create-post{
+    background-color: var(--yellow-100);
+    
+}
+
+#ai-content , #maintain-content{
+    background-color: var(--yellow-500);
+}
+
+#Grow-followers , #social-media{
+    color: var(--white);
+    background-color: var(--purple-500);
+}
+
+#Schedule{
+    background-color: var(--purple-100);
+    overflow: hidden;
+}
+
+#accounts , #faster-growth{
+    background-color: var(--white);
 }
