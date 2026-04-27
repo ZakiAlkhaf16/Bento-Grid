@@ -1,111 +1,139 @@
-:root{
-    
---purple-100: hsl(254, 88%, 90%);
---purple-500: hsl(256, 67%, 59%);
---yellow-100: hsl(31, 66%, 93%);
---yellow-500: hsl(39, 100%, 71%);
---white: hsl(0, 0%, 100%);
---black: hsl(0, 0%, 7%);
-}
+:root {
 
-* {
-    box-sizing: border-box;
+    --purple-100: hsl(254, 88%, 90%);
+    --purple-500: hsl(256, 67%, 59%);
+    --yellow-100: hsl(31, 66%, 93%);
+    --yellow-500: hsl(39, 100%, 71%);
+    --white: hsl(0, 0%, 100%);
+    --black: hsl(0, 0%, 7%);
 }
 
 @font-face {
     font-family: 'DMSans';
-    src: url(./assets/fonts/DMSans-Italic-VariableFont_opsz\,wght.ttf) ;
-    font-weight: 400 , 500;
+    src: url(./assets/fonts/DMSans-Italic-VariableFont_opsz\,wght.ttf);
+    font-weight: 400, 500;
     font-style: normal;
 }
 
-
-body{
+body {
     padding: 0;
     margin: 0;
     font-size: 18px;
     font-family: 'DMSans';
-    background-color:lightgray;
-    
+    line-height: 1;
 }
 
 img {
-    max-width: 100%;
+    width: 50%;
     height: auto;
-    display: block;
 }
 
 .container {
+    padding: 50px;
     width: 100%;
-    max-width: 1100px; 
-    margin: 0 auto;
     display: grid;
-    /* تقسيم بـ 4 أعمدة متساوية */
-    grid-template-columns: repeat(4, 1fr);
-    /* تقسيم بـ 6 صفوف صغيرة لمرونة الارتفاع */
-    grid-template-rows: repeat(6, minmax(80px, auto)); 
-    gap: 25px;
-    
-    /* توزيع المناطق بناءً على الصورة */
-    grid-template-areas:
-        "box-1 box-3 box-3 box-7"
-        "box-1 box-3 box-3 box-7"
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: repeat(2, auto);
+    gap: 30px 30px;
+    grid-template-areas: "box-1 box-3 box-3 box-7"
         "box-1 box-4 box-5 box-7"
-        "box-2 box-4 box-5 box-7"
         "box-2 box-6 box-8 box-8"
-        "box-2 box-6 box-8 box-8";
+    ;
 }
 
-.grids{
+.grids {
+    border-radius: 10px;
+    padding: 30px;
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
-    justify-content: space-between; /* ليتم توزيع النصوص والصور بشكل احترافي داخل الكارد */
-    padding: 25px;
-    border-radius: 20px;
-    overflow: hidden;
 }
 
-#social-media h1 {
-    font-size: 3rem;
-    text-align: center;
-    font-weight: 500;
-}
 
-/* card colors */
-#create-post{
-    margin-left: 6px;
-    background-color: var(--yellow-100);
-    font-weight: 500;
-    font-size: 40px;
-}
 
-.quicker{
-    color: var(--purple-500);
-}
-
-#ai-content , #maintain-content{
+#ai-content,
+#maintain-content {
     background-color: var(--yellow-500);
 }
 
-#ai-content {
-    font-size: 2.5rem;
-    font-weight: 600;
-}
-
-#ai-content img {
-    
-}
-
-#Grow-followers , #social-media{
+#Grow-followers,
+#social-media {
     color: var(--white);
     background-color: var(--purple-500);
 }
 
-#Schedule{
+#Schedule {
     background-color: var(--purple-100);
     overflow: hidden;
 }
 
-#accounts , #faster-growth{
+#accounts,
+#faster-growth {
     background-color: var(--white);
 }
+
+#Grow-followers {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: x-large;
+}
+
+
+/* Social media edits */
+#social-media span {
+    color: var(--yellow-500);
+}
+#social-media p {
+     font-size: 18px;
+}
+
+.social-media-title {
+    font-size: 56px;
+    padding: 30px;
+    font-weight: 500;
+}
+
+
+/* create post edits */
+#create-post {
+    background-color: var(--yellow-100);
+    font-weight: 500;
+    font-size: 36px;
+    display: flex;
+}
+
+#create-post span {
+   color: var(--purple-500);
+}
+
+/* schedule */
+#Schedule h1 {
+    font-size: 32px;
+    font-weight: medium;
+    padding: 30px;
+}
+#schedule p {
+    font-size: 18px;
+ 
+    font-weight: 400;
+}
+
+/* ai content */
+#ai-content  {
+    font-size: 36px;
+    font-weight: medium;
+       
+}
+
+#maintain-content , #faster-growth  , #accounts { 
+    font-size: 28px;
+    font-weight: medium;
+}
+
+#faster-growth p span {
+    font-size: 48px;
+}
+
