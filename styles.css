@@ -1,35 +1,37 @@
 :root {
-
     --purple-100: hsl(254, 88%, 90%);
     --purple-500: hsl(256, 67%, 59%);
     --yellow-100: hsl(31, 66%, 93%);
     --yellow-500: hsl(39, 100%, 71%);
     --white: hsl(0, 0%, 100%);
     --black: hsl(0, 0%, 7%);
+
+    --fs-reg:1.125rem;
+    --fs-med:2.25rem;
+    --fs-lg:3rem;
+    --fs-xl:4rem;
 }
 
 @font-face {
-    font-family: 'DMSans';
+    font-family: 'DMSans' ;
     src: url(./assets/fonts/DMSans-Italic-VariableFont_opsz\,wght.ttf);
-    font-weight: 400, 500;
+    font-weight: 400 500;
     font-style: normal;
 }
-
+html{
+    line-height: 1.5;
+}
 body {
     padding: 0;
     margin: 0;
-    font-size: 18px;
+    font-size: var(--fs-reg);
     font-family: 'DMSans';
-    line-height: 1;
 }
 
-img {
-    width: 50%;
-    height: auto;
-}
+ 
 
 .container {
-    padding: 50px;
+    padding: 20px;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(4, auto);
@@ -43,7 +45,7 @@ img {
 
 .grids {
     border-radius: 10px;
-    padding: 30px;
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -78,7 +80,7 @@ img {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    font-size: x-large;
+    font-size: var(--fs-reg);
 }
 
 
@@ -87,12 +89,12 @@ img {
     color: var(--yellow-500);
 }
 #social-media p {
-     font-size: 18px;
+     font-size: var(--fs-reg);
 }
 
 .social-media-title {
-    font-size: 56px;
-    padding: 30px;
+    font-size: var(--fs-xl);
+    
     font-weight: 500;
 }
 
@@ -101,7 +103,7 @@ img {
 #create-post {
     background-color: var(--yellow-100);
     font-weight: 500;
-    font-size: 36px;
+    font-size: var(--fs-med);
     display: flex;
 }
 
@@ -111,29 +113,80 @@ img {
 
 /* schedule */
 #Schedule h1 {
-    font-size: 32px;
+    font-size: var(--fs-med);
     font-weight: medium;
-    padding: 30px;
+    
 }
 #schedule p {
-    font-size: 18px;
+    font-size: var(--fs-reg);
  
     font-weight: 400;
 }
 
 /* ai content */
 #ai-content  {
-    font-size: 36px;
+    font-size: var(--fs-med);
     font-weight: medium;
-       
 }
 
 #maintain-content , #faster-growth  , #accounts { 
-    font-size: 28px;
+    font-size: var(--fs-med);
     font-weight: medium;
 }
 
 #faster-growth p span {
-    font-size: 48px;
+    font-size: var(--fs-lg);
 }
 
+@media (max-width: 768px) {
+    .container {
+        /* تحويل الشبكة لعمود واحد يمتد بكامل العرض */
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        
+        /* إعادة ترتيب المناطق حسب الصورة */
+        grid-template-areas: 
+            "box-3" /* Social Media 10x Faster */
+            "box-4" /* Manage multiple accounts */
+            "box-5" /* Maintain consistent schedule */
+            "box-7" /* Schedule to social media */
+            "box-1" /* Grow followers */
+            "box-2" /* >56% faster growth */
+            "box-6" /* Create and schedule content */
+            "box-8";/* Write content using AI */
+            
+        gap: 24px; 
+        padding: 16px;
+    }
+
+    
+    :root {
+        --fs-xl: 2.25rem; 
+        --fs-lg: 1.8rem;
+        --fs-med: 1.5rem;
+        --fs-reg: 1.1rem;
+    }
+
+    .grids {
+        padding: 24px;
+        text-align: center; 
+    }
+
+    
+    .grids {
+    
+        min-height: fit-content;
+    }
+
+    #Grow-followers {
+    
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    
+    #social-media, #Grow-followers {
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+    }
+}
